@@ -1,13 +1,9 @@
 function Main() {
-    return (
-    
-      
-      <>
-      Main
-      </>
-  
-      
-    );
-  }
-  
-  export default Main;
+  return (
+    <>
+      <div>Main</div>
+    </>
+  );
+}
+
+export default Main;
