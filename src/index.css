@@ -35,6 +35,9 @@ code {
   list-style: none;
 }
 .nav li {
+  text-decoration: none;
   margin: 10px;
   display: flex;
 }
+
+.nav li.active { background-color: black;}

@@ -1,25 +1,33 @@
-function Nav() {
-    return (
-    
-      
-      <>
-      < nav className="nav">  
-      <img src="./Logo.svg" alt="logo"/>  
-      <ul>
-    
+import { NavLink} from "react-router-dom";
 
-       <li><a href="#Home"> Home</a></li>
-       <li><a href="#Home"> About</a></li>
-       <li><a href="#Home"> Menu</a></li>
-       <li><a href="#Home"> Reservation</a></li>
-       <li><a href="#Home"> Order online</a></li>
-       <li><a href="#Home"> Login</a></li>
-      </ul>
+function Nav() {
+  return (
+    <>
+      <nav className="nav">
+        <img src="./Logo.svg" alt="logo" />
+        <ul>
+          <li>
+            <NavLink to="/"> Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="about"> About</NavLink>
+          </li>
+          <li>
+            <NavLink to="menu"> Menu</NavLink>
+          </li>
+          <li>
+            <NavLink to="reservation"> Reservation</NavLink>
+          </li>
+          <li>
+            <NavLink to="orderonline"> Order online</NavLink>
+          </li>
+          <li>
+            <NavLink to="contact"> Contact</NavLink>
+          </li>
+        </ul>
       </nav>
-      </>
-  
-      
-    );
-  }
-  
-  export default Nav;
+    </>
+  );
+}
+
+export default Nav;
