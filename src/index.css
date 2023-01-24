@@ -11,33 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.App {
-  background-color: #f1f1f1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 24px;
-  color: black;
-}
-
-.nav {
-  margin: 70px;
-  display: flex;
-  justify-content: center;
-}
-.nav ul {
-  margin: 7px;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-}
-.nav li {
-  text-decoration: none;
-  margin: 10px;
-  display: flex;
-}
-
-.nav li.active { background-color: black;}

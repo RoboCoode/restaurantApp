@@ -1,14 +1,13 @@
 import Main from "./Main";
 import Footer from "./Footer";
-import Nav from "./Footer";
 
 function Home() {
   return (
-    <>
+    <div>
       
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
 
