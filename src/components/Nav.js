@@ -4,7 +4,7 @@ function Nav() {
   return (
     <>
       <nav className="nav">
-        <img src="./Logo.svg" alt="logo" />
+     
         <ul>
           <li>
             <NavLink to="/"> Home</NavLink>
@@ -19,7 +19,7 @@ function Nav() {
             <NavLink to="reservation"> Reservation</NavLink>
           </li>
           <li>
-            <NavLink to="orderonline"> Order online</NavLink>
+            <NavLink to="orderonline"> Order  online</NavLink>
           </li>
           <li>
             <NavLink to="contact"> Contact</NavLink>
