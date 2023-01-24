@@ -10,17 +10,20 @@ function Nav() {
             <NavLink to="/"> Home</NavLink>
           </li>
           <li>
-            <NavLink to="about"> About</NavLink>
+            <NavLink to="menu"> Menu</NavLink>
           </li>
           <li>
-            <NavLink to="menu"> Menu</NavLink>
+            <NavLink to="orderonline"> Order  online</NavLink>
+
           </li>
           <li>
             <NavLink to="reservation"> Reservation</NavLink>
           </li>
+          
           <li>
-            <NavLink to="orderonline"> Order  online</NavLink>
+            <NavLink to="about"> About</NavLink>
           </li>
+
           <li>
             <NavLink to="contact"> Contact</NavLink>
           </li>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
 .App {
   background-color: #f1f1f1;
@@ -14,23 +14,27 @@
 
 .header {
   display: grid;
-  column-gap: 20px;
+  column-gap: 1.25rem;
   margin: 3.5rem 4.375rem;
   grid-template-columns: repeat(12, 1fr);
 }
 
-.logo {
+#logo {
+  
   grid-column: 3/5;
- justify-self: stretch;
-  align-self: stretch;}
+  justify-self: stretch;
+  align-self: stretch;
+  width: 12.5rem;
+  height: 6.4rem;
+}
 .nav {
-
   grid-column: 5/10;
   align-self: center;
 }
 .nav ul {
-  font-size: 20px;
-  font-family: 'Markazi Text';
+  
+  font-size: 1.25rem;
+  font-family: "Markazi Text";
   font-weight: 500;
   display: flex;
   justify-content: space-around;
@@ -47,9 +51,127 @@
 }
 
 .nav li a.active {
-  color:white;
+  color: white;
   padding: 0.375rem;
   border-radius: 0.25rem;
-  background-color: #495E57 ;
+  background-color: #495e57;
 }
 
+#logo2 {
+  width: 10.5rem;
+  height: 22.3rem;
+  grid-column: 3/5;
+}
+
+.footer {
+
+  display: grid;
+  column-gap: 1.25rem;
+  margin: 3.5rem 4.375rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.foot-section {
+  width: auto;
+  height: auto;
+  grid-column: 5/9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.foot-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media screen 
+  and (max-width: 560px) {  
+
+    .header {
+      display: grid;
+      margin: 0.5rem ;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1fr 1fr;
+      column-gap: 0.25rem;
+
+    }
+
+    #logo {
+  
+      grid-column: 1/3;
+      grid-row: 1/2;
+      justify-self: center;
+      align-self: center;}
+
+      .nav {
+       
+        grid-column: 1/3;
+      grid-row: 2/3;
+    
+      }
+      .nav ul {
+  
+        font-size: 0.8rem;
+        font-family: "Markazi Text";
+        font-weight: 500;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        align-items: center;
+        padding: 0;
+      }
+      
+      .nav li a {
+        padding: 0.175rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        margin: 0.25rem;
+        display: flex;
+      }
+      
+      .nav li a.active {
+        color: white;
+        padding: 0.375rem;
+        border-radius: 0.25rem;
+        background-color: #495e57;
+      }
+      
+    
+      
+      .footer {
+      
+        display: grid;
+        column-gap: 0.25rem;
+        margin: 0.5rem ;
+        grid-template-columns: 1fr 3fr;
+      }
+      
+      #logo2 {
+        width: 3.5rem;
+        height: 6.3rem;
+        grid-column: 1/2;
+        justify-self: center;
+        align-self: center;
+      }
+
+      p {  line-height: 0.3rem;}
+      .foot-section {
+      
+        font-size: 0.6rem;
+        grid-column: 2/3;
+        display: flex;
+        
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+      
+      .foot-section ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+  }
