@@ -6,8 +6,10 @@ function Footer() {
       <div className="foot-section">
         <div>
           <h4>Contact </h4>
-          <p> Adress: Beverly Hills 9210 </p>
-          <p>Phone: +010010144475</p>
+          <p> Adress:</p>
+          <p>  Beverly Hills 9210 </p>
+          <p>Phone: </p>
+          <p>  +010010144475</p>
         </div>
         <div>
           <h4> Pages </h4>
