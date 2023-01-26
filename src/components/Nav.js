@@ -4,7 +4,6 @@ function Nav() {
   return (
     <>
       <nav className="nav">
-     
         <ul>
           <li>
             <NavLink to="/"> Home</NavLink>
@@ -13,13 +12,12 @@ function Nav() {
             <NavLink to="menu"> Menu</NavLink>
           </li>
           <li>
-            <NavLink to="orderonline"> Order  online</NavLink>
-
+            <NavLink to="orderonline"> Order online</NavLink>
           </li>
           <li>
             <NavLink to="reservation"> Reservation</NavLink>
           </li>
-          
+
           <li>
             <NavLink to="about"> About</NavLink>
           </li>

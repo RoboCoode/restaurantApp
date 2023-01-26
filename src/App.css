@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
+
 .App {
   background-color: #f1f1f1;
   min-height: 100vh;
@@ -120,11 +121,296 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
-  grid-column: 3/7;
+  grid-column: 3/6;
   grid-row: 4/5;
 }
+
+.hero > p::first-letter { 
+  font-size: 2rem;}
+
 .hero > button {
-  background-color: #333333;
+  background-color: #495e57;
+  color: #edefee;
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 0.3rem;
+
+  grid-column: 4/5;
+  grid-row: 6/7;
+  width: 8.3rem;
+  height: 2.1rem;
+  font-size: 1rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  border-radius: 0.5rem;
+}
+
+.hero > button:hover {
+  background-color: #ee9972;
+  color: #343434;
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 0.3rem;
+  grid-column: 4/5;
+  grid-row: 6/7;
+  width: 8.3rem;
+  height: 2.1rem;
+  font-size: 1rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  border-radius: 0.5rem;
+}
+
+.hero > img {
+  width: 35.3rem;
+  height: 23.1rem;
+  grid-column: 7/12;
+  grid-row: 2/7;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+}
+
+.main > h1 {
+  margin-top: 2rem;
+  text-shadow: 5px 5px 5px #000000;
+  padding: 0.5rem;
+  color: #ffffff;
+  grid-column: 3/6;
+  grid-row: 1/2;
+  border-radius: 0.3rem;
+  
+}
+
+.main {
+  display: grid;
+  background-color: #7ea397;
+  color: rgb(0, 0, 0);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+  column-gap: 1.25rem;
+}
+
+.main > button {
+  background-color: #495e57;
+  color: #f1f1f1;
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 0.3rem;
+  margin-top: 2.5rem;
+
+  grid-column: 6/9;
+  grid-row: 1/2;
+  width: 7.3rem;
+  height: 2.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #000000;
+}
+
+.main > button:hover {
+  background-color: #ee9972db;
+  color: #000000;
+  margin-top: 2.5rem;
+
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 2rem;
+
+  grid-column: 6/9;
+  grid-row: 1/2;
+  width: 7.3rem;
+  height: 2.1rem;
+    font-size: 0.8rem;
+
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+}
+
+.main ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  grid-row: 2/2;
+  grid-column: 3/10;
+  margin-bottom: 3rem;
+}
+
+.main h1 {
+  grid-column: 3/10;
+  grid-row: 1/2;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  margin-left: 1rem;
+  padding: 0;
+  height: 18.6rem;
+  width: 12.5rem;
+  background-color: #f3f8f5;
+  border-radius: 0.5rem;
+}
+
+.cardimage {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0.5rem;
+
+  height: 40%;
+}
+
+.cardbody {
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+}
+
+.cardfirstrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
+  background-color: #fbdabb;
+}
+
+.cardend > button {
+  background-color: #ffffffeb;
+  color: #0b0b0b;
+  border: rgb(255, 255, 255);
+  border-style: solid;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  grid-column: 8/9;
+  grid-row: 1/2;
+  width: 6.3rem;
+  height: 1.1rem;
+  font-size: 0.6rem;
+
+  margin-left: 0.5rem;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem #000000;
+}
+
+.cardend > button:hover {
+  background-color: #ee9972db;
+  color: #0b0b0b;
+  border: #ee9972db;
+  border-style: solid;
+  border-radius: 0.3rem;
+  margin-left: 0.5rem;
+  border-radius: 2rem;
+
+  grid-column: 8/9;
+  grid-row: 1/2;
+
+  width: 6.3rem;
+  height: 1.1rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  box-shadow: 0.1rem 0.1rem 0.2rem #000000;
+}
+
+.cardend {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carddescrip {
+  height: 50%;
+  padding: 0.5rem;
+}
+.cardbody p {
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.cardtitle {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+
+  align-items: center;
+  font-weight: 700;
+
+  max-width: 9rem;
+  max-height: 3rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.cardprice {
+  border-radius: 50%;
+  background-color: white;
+  height: 2.1rem;
+  width: 2.1rem;
+  font-weight: 700;
+  word-wrap: break-word;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 0.4rem;
+}
+
+
+.about {
+  background-color: #fbdabb;
+  display: grid;
+  grid: repeat(7, minmax(30px, auto)) / repeat(12, 1fr);
+  column-gap: 1.25rem;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+  height: 28.1rem;
+}
+
+.about > h1 {
+  margin: 0;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  padding: 0.5rem;
+  background-color: #495e57;
+  color: #edefee;
+  grid-column: 3/6;
+  grid-row: 2/3;
+  border-radius: 0.3rem;
+}
+
+.about > h4 {
+  background-color: #face14;
+  padding: 0.3rem;
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+
+  grid-column: 3/6;
+  grid-row: 3/4;
+}
+.about > p {
+  margin-bottom: 0;
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  grid-column: 3/6;
+  grid-row: 4/5;
+}
+.about > button {
+  background-color: #495e57;
   color: #edefee;
   border: rgb(61, 61, 61);
   border-style: solid;
@@ -136,10 +422,11 @@
   height: 3.1rem;
   font-size: 1rem;
   box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  border-radius: 0.5rem;
 }
 
-.hero > button:hover {
-  background-color: #EE9972;
+.about > button:hover {
+  background-color: #ee9972;
   color: #343434;
   border: rgb(61, 61, 61);
   border-style: solid;
@@ -150,16 +437,124 @@
   height: 3.1rem;
   font-size: 1rem;
   box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  border-radius: 0.5rem;
 }
 
-.hero > img {
-  width: 35.3rem;
-  height: 23.1rem;
+
+
+
+#imgabout1{   
+  width: 14.4rem;  height: 11.4rem;
   grid-column: 7/12;
   grid-row: 2/7;
   border-radius: 0.5rem;
   box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+ }
+
+
+ #imgabout2{    
+  width: 14.4rem;  height: 11.4rem;
+  grid-column: 8/12;
+  grid-row: 4/7;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  position: relative;
+  left: 3rem;
+ }
+
+
+ 
+#imgabout3{   
+  width: 14.4rem;
+  height: 11.4rem;
+  grid-column: 9/12;
+  grid-row: 2/7;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  position: relative;
+  left: 6rem;
+ }
+
+
+ 
+#imgabout4{    
+  width: 16.4rem;
+  height: 24.4rem;
+  grid-column: 7/12;
+  grid-row: 2/7;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+ }
+
+
+.reservation { 
+
+  background-color: #fbdabb;
+  display: grid;
+  grid: repeat(7, minmax(30px, auto)) / repeat(12, 1fr);
+  column-gap: 1.25rem;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+  height: 28.1rem;
 }
+
+
+.bookingform { 
+
+ 
+  grid-column: 6/8;
+ grid-row: 3/7;
+
+}
+
+  
+.bookingform form{ 
+
+  display: grid;
+ max-width: 200px; 
+ gap: 20px
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 560px) {
   .header {
@@ -212,6 +607,8 @@
     column-gap: 0.25rem;
     margin: 0.5rem;
     grid-template-columns: 1fr 3fr;
+    margin-bottom: 1.3rem;
+    margin-top: 1.3rem;
   }
 
   #logo2 {
@@ -246,11 +643,11 @@
     column-gap: 0.5rem;
     margin: 0;
     height: 28.1rem;
-    background-image: url("/public/Mario and Adrian A.jpg");
+    background-image: url("/public/restauranfood.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -2;
+   
   }
 
   .hero > h1 {
@@ -283,46 +680,53 @@
     overflow-wrap: break-word;
     hyphens: auto;
     grid-column: 1/4;
-    grid-row: 4/5;
-    background-color: rgb(0, 0, 0);
+    grid-row: 6/6;
+    background-color: #495e57;
     opacity: 0.7;
     padding: 0.5rem;
     font-size: 1em;
+
     color: #ffffff;
     border-radius: 0.5rem;
   }
 
   .hero > button {
-    background-color: #000000cd;
+    background-color: #202020eb;
     color: #f1f1f1;
     border: rgb(61, 61, 61);
     border-style: solid;
     border-radius: 0.3rem;
 
     grid-column: 1/3;
-    grid-row: 6/7;
+    grid-row: 7/7;
     width: 7.3rem;
     height: 3.1rem;
     font-size: 0.8rem;
-   
+    position: relative;
+    left: 14rem;
+    top: 2.3rem;
     margin-left: 0.5rem;
-   
+    border-radius: 2rem;
     box-shadow: 0.4rem 0.3rem 0.7rem #000000;
   }
 
   .hero > button:hover {
     background-color: #ee9972db;
     color: #000000;
-  
+
     border: rgb(61, 61, 61);
     border-style: solid;
-    border-radius: 0.3rem;
+    border-radius: 2rem;
 
     grid-column: 1/3;
-    grid-row: 6/7;
+    grid-row: 7/7;
     width: 7.3rem;
     height: 3.1rem;
     font-size: 0.8rem;
+    left: 14rem;
+    top: 2.3rem;
+    margin-left: 0.5rem;
+    border-radius: 2rem;
     box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
   }
 
@@ -330,3 +734,55 @@
     display: none;
   }
 }
+
+.testi {
+  background-color: rgb(177, 175, 175);
+  width: 19.5rem;
+  height: 8.75rem;
+  display: flex;
+}
+.testi img {
+  width: 100%;
+}
+.testi span {
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+
+.testibody {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.testiimage{
+
+  width: 50%;
+  height: 100%; }
+
+.testibody p { 
+  margin: 0;
+  width: 100%;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;}
+
+ 
+
+  .testiend {  
+    display: flex;
+   flex-direction: column ;
+    width: 100%;
+    height: 40%;   }
