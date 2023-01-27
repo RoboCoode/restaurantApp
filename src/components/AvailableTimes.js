@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-function AvailableTimes() {
-  const initState = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+function AvailableTimes(props) {
 
-  const [avaTimes, setAvaTimes] = useState(initState);
 
   let listTimes = () => {
-    let newArr = avaTimes.map(function (e) {
+    let newArr = props.avaTimes.map(function (e) {
       return <option key={e} value={e}>{e}</option>;
     });
     return newArr;
