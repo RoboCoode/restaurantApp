@@ -1,30 +1,29 @@
-function Testimonial() {
-  return (
+function Testimonial(props) {
+  let comments = props.comments;
+  console.log(comments)
+  let listComments =  comments.map((comment) => (
     <div className="testi">
-      <div className="testiimage" >
-        <img src="image.jpg" alt="image" />
+      <div className="testiimage">
+        <img src={comment.image} alt="image" />
       </div>
 
-      <div className="testibody" >
-      
-          <p>
-            dasdasdas dasd dasdasdasdasd dasdasdasdasd dasda sdasdas
-            ddasdasdasdasd dasdasdasdasd vdasdasdasdasd dasdasdasdasd
-          </p>
-       
+      <div className="testibody">
+        <p>"{comment.text}"</p>
 
         <div className="testiend">
           <div>
-            <span>name: Aaas RRRRRRRa</span>
+            <span>{comment.name}</span>
           </div>
 
           <div>
-            <span>Rating</span>
+            <span>Rating {comment.rating}</span>
           </div>
         </div>
       </div>
     </div>
-  );
+  ));
+
+  return <ul>{listComments}</ul>;
 }
 
 export default Testimonial;

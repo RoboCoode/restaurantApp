@@ -1,7 +1,7 @@
 import Main from "./Main";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import Testimonial from "./Testimonial";
+import Testimonials from "./Testimonials";
 import About from "./About";
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
     <div>
       <Hero />
       <Main />
-      <Testimonial />
+      <Testimonials />
       <About />
       <Footer />
     </div>
