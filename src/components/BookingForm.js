@@ -1,9 +1,17 @@
 import AvailableTimes from "./AvailableTimes";
 
 function BookingForm(props) {
-  
+  function handleNewDateChange(e) {
 
-  
+   props.setDate(e.target.value);
+
+
+    props.updateFetchTime({type: "newdate", date: e.target.value});
+
+
+
+    
+  }
 
   return (
     <div className="bookingform">
@@ -11,7 +19,7 @@ function BookingForm(props) {
         <label htmlFor="res-date">Choose date</label>
         <input
           value={props.date}
-          onChange={(e) => props.setDate(e.target.value)}
+          onChange={handleNewDateChange}
           type="date"
           id="res-date"
         />

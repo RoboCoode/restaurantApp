@@ -5,11 +5,17 @@ function Footer() {
 
       <div className="foot-section">
         <div>
+         
+        
+          <ul>
           <h4>Contact </h4>
-          <p> Adress:</p>
-          <p>  Beverly Hills 9210 </p>
-          <p>Phone: </p>
-          <p>  +010010144475</p>
+            <li><label> Adress:</label>  Beverly Hills 9210 </li>
+
+            <li>   Phone: <label> </label>    +010010144475 </li>
+            <li><label>Email: </label> little.lemon@com</li>
+         
+          </ul>
+
         </div>
         <div>
           <h4> Pages </h4>

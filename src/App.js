@@ -3,6 +3,8 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Reservation from "./components/Reservation";
+import About from "./components/About";
+
 
 
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="menu" element={<Main />} />
           <Route path="contact" element={<Footer />} />
           <Route path="reservation" element={<Reservation />} />
+          <Route path="about" element={<About />} />
+
           <Route path="*" element={<Home />} />
         </Routes>
         </BrowserRouter>

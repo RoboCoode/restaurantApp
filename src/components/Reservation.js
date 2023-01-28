@@ -1,11 +1,23 @@
 import BookingForm from "./BookingForm";
 import BookingSlot from "./BookingSlot";
-import { useState } from "react";
+import { useState, useReducer } from "react";
+import { fetchAPI } from "../fetchAPI.js";
 
 function Reservation() {
-  const initState = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  function  initializeTimes() { return   fetchAPI(new Date())};
+  
 
-  const [availableTimes, setAvaTimes] = useState(initState);
+  function updateTimes(state, action) {
+
+    switch (action.type) { 
+
+      case 'newdate': {  return fetchAPI(new Date(action.date));   }
+    }
+
+   
+  }
+
+  const [availableTimes, dispatch] = useReducer(updateTimes,{} ,initializeTimes);
   const [date, setDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -13,6 +25,8 @@ function Reservation() {
   const [guest, setGuest] = useState("1");
   const [occasion, setOccasion] = useState("");
   const [bookedSlots, setbookedSlots] = useState([]);
+
+  console.log("AvaTimes 2 : ", availableTimes);
 
   const getIsFormValid = () => {
     return date && firstName && lastName && time && guest && occasion;
@@ -26,19 +40,21 @@ function Reservation() {
     setGuest("1");
     setOccasion("");
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   for (let i=0; i< bookedSlots.length; i++){
-
-  if ( bookedSlots[i].bookedDate === date && bookedSlots[i].bookedTime === time){
-
-    alert("This reservation are already booked. Please choose another time. ");
-    return;
-  }}
-   
-   
- 
+    for (let i = 0; i < bookedSlots.length; i++) {
+      if (
+        bookedSlots[i].bookedDate === date &&
+        bookedSlots[i].bookedTime === time
+      ) {
+        alert(
+          "This reservation are already booked. Please choose another time. "
+        );
+        return;
+      }
+    }
 
     alert("Reservation created!");
 
@@ -48,11 +64,6 @@ function Reservation() {
     ]);
     clearForm();
   };
-
-
-
-
-  
 
   return (
     <div className="reservation">
@@ -72,6 +83,7 @@ function Reservation() {
         setGuest={setGuest}
         occasion={occasion}
         setOccasion={setOccasion}
+        updateFetchTime={dispatch}
       />
       <BookingSlot bookedSlots={bookedSlots} />
     </div>

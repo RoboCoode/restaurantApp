@@ -103,6 +103,9 @@
   grid-column: 3/6;
   grid-row: 2/3;
   border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero > h4 {
@@ -110,7 +113,9 @@
   padding: 0.3rem;
   margin-top: 0.5rem;
   border-radius: 0.3rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-column: 3/6;
   grid-row: 3/4;
 }
@@ -128,7 +133,17 @@
 .hero > p::first-letter { 
   font-size: 2rem;}
 
-.hero > button {
+#herolink{  
+  
+  
+  
+  grid-column: 4/5;
+  grid-row: 6/7; 
+
+
+}
+
+#heroReserve {
   background-color: #495e57;
   color: #edefee;
   border: rgb(61, 61, 61);
@@ -144,7 +159,7 @@
   border-radius: 0.5rem;
 }
 
-.hero > button:hover {
+#heroReserve:hover {
   background-color: #ee9972;
   color: #343434;
   border: rgb(61, 61, 61);
@@ -380,6 +395,9 @@
 }
 
 .about > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
   padding: 0.5rem;
@@ -395,7 +413,9 @@
   padding: 0.3rem;
   margin-top: 0.5rem;
   border-radius: 0.3rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-column: 3/6;
   grid-row: 3/4;
 }
