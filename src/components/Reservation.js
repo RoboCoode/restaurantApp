@@ -1,23 +1,32 @@
 import BookingForm from "./BookingForm";
 import BookingSlot from "./BookingSlot";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import { fetchAPI } from "../fetchAPI.js";
 
 function Reservation() {
-  function  initializeTimes() { return   fetchAPI(new Date())};
-  
-
-  function updateTimes(state, action) {
-
-    switch (action.type) { 
-
-      case 'newdate': {  return fetchAPI(new Date(action.date));   }
-    }
-
-   
+  function initializeTimes() {
+    return fetchData();
   }
 
-  const [availableTimes, dispatch] = useReducer(updateTimes,{} ,initializeTimes);
+  function updateTimes(state, action) {
+    switch (action.type) {
+      case "newdate": {
+        return fetchData(action.date);
+      }
+    }
+  }
+
+  let fetchData = (r) => fetchAPI(new Date(r));
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    {},
+    initializeTimes
+  );
   const [date, setDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,8 +34,6 @@ function Reservation() {
   const [guest, setGuest] = useState("1");
   const [occasion, setOccasion] = useState("");
   const [bookedSlots, setbookedSlots] = useState([]);
-
-  console.log("AvaTimes 2 : ", availableTimes);
 
   const getIsFormValid = () => {
     return date && firstName && lastName && time && guest && occasion;
@@ -41,9 +48,7 @@ function Reservation() {
     setOccasion("");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const bookingconditions = () => {
     for (let i = 0; i < bookedSlots.length; i++) {
       if (
         bookedSlots[i].bookedDate === date &&
@@ -52,17 +57,32 @@ function Reservation() {
         alert(
           "This reservation are already booked. Please choose another time. "
         );
-        return;
+        return false;
       }
     }
 
-    alert("Reservation created!");
+    if (bookedSlots.length > 1) {
+      alert("Limit is 2 reservation");
+      clearForm();
+      return false;
+    }
+    return true;
+  };
 
-    setbookedSlots((prevState) => [
-      ...prevState,
-      { ["bookedDate"]: date, ["bookedTime"]: time },
-    ]);
-    clearForm();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (bookingconditions()) {
+      alert("Reservation created!");
+
+      setbookedSlots((prevState) => [
+        ...prevState,
+        { ["bookedDate"]: date, ["bookedTime"]: time },
+      ]);
+
+      clearForm();
+    } else {
+      return;
+    }
   };
 
   return (

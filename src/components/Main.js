@@ -10,7 +10,7 @@ function Main() {
     },*/
     {
       name: "Bruccheta",
-      description: "Halalalalalalalalalalalalal alalalal alalala",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
       price: "8 €",
       image: "https://img.aktuality.sk/foto/MHgxODo1MTg0eDI5MzEvZml0LWluLzg4MHg0MDAvaW1n/ZTJ4EASaTebUIQKrI5BCzg.jpg?st=zH8LLsPHmZDqFxsVJMZ7dLqIQfXdsb-A-yFI0ZCBfgY&ts=1559563114&e=0",
     },
@@ -23,18 +23,18 @@ function Main() {
     {
       name: "Honey soup",
       description:
-        " Lore Ipsum  Lore Ipsum   Lore Ipsum   Lore Ipsum   Lore Ipsum ",
+        " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  ",
       price: "11 €",
 image: "./soup.png"    },
     {
       name: "Vegeratian meat",
-      description: " Just mockup mockup mockup mockup mockup",
+      description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
       price: "7 €",
       image: "https://www.veganfoodandliving.com/wp-content/uploads/2018/09/GettyImages-801224958.jpg",
     },
     {
       name: "Cheese pastrami Cheese pastrami are most delicious ",
-      description: " Cheese pastrami are most delicious Cheese pastrami are most delicious Cheese pastrami are most delicious Cheese pastrami are most delicious Cheese pastrami are most delicious Cheese pastrami are most delicious ",
+      description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  ",
       price: "25 €",
       image: "https://www.sargento.com/assets/Uploads/Recipe/Image/asffeewq.jpg",
     },
@@ -43,7 +43,6 @@ image: "./soup.png"    },
   return (
     <div className="main">
     <h1> Taste our specials</h1>
-    <button > Order menu </button>
 
       <Card dishes={arrdishes} />
     </div>

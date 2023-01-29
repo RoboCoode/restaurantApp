@@ -1,14 +1,20 @@
+import "./BookingSlot.css"
+
+
 function BookingSlot(props) {
   
   const listBookedSlots = (e) => {
     let newArr = e.map((e) => {
       if (!(JSON.stringify(e) === "{}")) {
         return (
-          <div key={e.bookedDate + e.bookedTime}>
+          <li key={e.bookedDate + e.bookedTime}>
             <div >
-              Date: {e.bookedDate} Time: {e.bookedTime}
+              <span>  Date:</span>  {e.bookedDate} 
             </div>
-          </div>
+            <div >
+            <span> Time:</span>   {e.bookedTime}
+            </div>
+          </li>
         );
       }
     });
@@ -17,13 +23,13 @@ function BookingSlot(props) {
   };
 
   return (
-    <>
-      {" "}
-      <div> Booked: </div>
+  
+      <ul className="bookingslot"> 
+      <h4> Reservations: </h4>
       {props.bookedSlots.length > 0
         ? listBookedSlots(props.bookedSlots)
-        : "No booked date"}
-    </>
+        : "no records"}
+    </ul>
   );
 }
 

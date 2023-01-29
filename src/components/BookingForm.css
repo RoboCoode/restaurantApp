@@ -1,0 +1,131 @@
+form {
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  border: 4px solid hsl(0, 0%, 90%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.bookingform {
+  grid-column: 4/10;
+  grid-row: 3/7;
+}
+
+.labelbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea {
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  font: 1.25rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+
+}
+
+label {
+  display: inline-block;
+  font: bold 1rem sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: #495e57;
+  color: #f1f1f1;
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 0.3rem;
+  margin-top: 1.5rem;
+  width: 11.3rem;
+  height: 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  grid-column: 3/3;
+  box-shadow: 0.4rem 0.3rem 0.7rem #000000;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color: #ee9972db;
+  color: #000000;
+  margin-top: 1.5rem;
+
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 2rem;
+
+  width: 11.3rem;
+  height: 2.4rem;
+  font-size: 0.8rem;
+
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
+  cursor: pointer;
+
+}
+
+button:disabled {
+    background-color: #e2e1e1;
+    color: #aba8a8;
+    border: rgb(61, 61, 61);
+    border-style: solid;
+    border-radius: 0.3rem;
+    margin-top: 1.5rem;
+    width: 11.3rem;
+    height: 2.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+  }
+
+
+  select{  
+    background: url("/public/arrow down.svg") no-repeat center right 0.75rem;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #495e57;
+}
