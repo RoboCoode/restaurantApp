@@ -109,7 +109,7 @@ function Reservation() {
         occasion={occasion}
         setOccasion={setOccasion}
         updateFetchTime={dispatch}
-        formik={formik}
+        
       />
       <BookingSlot bookedSlots={bookedSlots} />
     </div>
