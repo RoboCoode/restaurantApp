@@ -55,7 +55,6 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem 0.75rem;
-
 }
 
 label {
@@ -79,7 +78,6 @@ button {
   grid-column: 3/3;
   box-shadow: 0.4rem 0.3rem 0.7rem #000000;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -98,30 +96,26 @@ button:hover {
   border-radius: 0.5rem;
   box-shadow: 0.4rem 0.3rem 0.7rem #090909a7;
   cursor: pointer;
-
 }
 
 button:disabled {
-    background-color: #e2e1e1;
-    color: #aba8a8;
-    border: rgb(61, 61, 61);
-    border-style: solid;
-    border-radius: 0.3rem;
-    margin-top: 1.5rem;
-    width: 11.3rem;
-    height: 2.4rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    border-radius: 0.5rem;
-    cursor: pointer;
-
-  }
-
-
-  select{  
-    background: url("/public/arrow down.svg") no-repeat center right 0.75rem;
+  background-color: #e2e1e1;
+  color: #aba8a8;
+  border: rgb(61, 61, 61);
+  border-style: solid;
+  border-radius: 0.3rem;
+  margin-top: 1.5rem;
+  width: 11.3rem;
+  height: 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
+select {
+  background: url("/public/arrow down.svg") no-repeat center right 0.75rem;
+}
 
 input:focus,
 select:focus,
@@ -129,3 +123,5 @@ textarea:focus {
   outline: none;
   box-shadow: 0 0 0 4px #495e57;
 }
+
+

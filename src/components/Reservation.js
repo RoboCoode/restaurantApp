@@ -3,6 +3,8 @@ import BookingSlot from "./BookingSlot";
 import { useState, useReducer, useEffect } from "react";
 import { fetchAPI } from "../fetchAPI.js";
 
+
+
 function Reservation() {
   function initializeTimes() {
     return fetchData();
@@ -36,8 +38,11 @@ function Reservation() {
   const [bookedSlots, setbookedSlots] = useState([]);
 
   const getIsFormValid = () => {
+   
+
     return date && firstName && lastName && time && guest && occasion;
   };
+
 
   const clearForm = () => {
     setFirstName("");
@@ -104,6 +109,7 @@ function Reservation() {
         occasion={occasion}
         setOccasion={setOccasion}
         updateFetchTime={dispatch}
+        formik={formik}
       />
       <BookingSlot bookedSlots={bookedSlots} />
     </div>
