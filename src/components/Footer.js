@@ -30,7 +30,6 @@ function Footer() {
 
         <ul>
           <h3> Social Links </h3>
-          <icon></icon>
         </ul>
       </div>
     </div>
