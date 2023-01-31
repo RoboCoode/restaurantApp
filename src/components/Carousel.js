@@ -54,15 +54,17 @@ let arrdishes = [
 
 const Carousel = () => {
   const [index, setIndex] = useState(1);
-
-  const [mobileSize, setMobileSize] = useState(window.innerWidth<560);
+  const [touchPosition, setTouchPosition] = useState(null);
+  const [mobileSize, setMobileSize] = useState(window.innerWidth < 560);
 
   const handleNext = () => {
     setIndex(index + 3 >= arrdishes.length ? 0 : index + 1);
   };
 
   const handlePrev = () => {
-    setIndex(index - 1 < 0 ? arrdishes.length - (mobileSize ? 1 : 3) : index - 1);
+    setIndex(
+      index - 1 < 0 ? arrdishes.length - (mobileSize ? 1 : 3) : index - 1
+    );
   };
 
   React.useEffect(() => {
@@ -78,17 +80,52 @@ const Carousel = () => {
     }
 
     window.addEventListener("resize", handleResize);
-    return _ => {
-        window.removeEventListener('resize', handleResize)}
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+        handlePrev();
+    }
+
+    if (diff < -5) {
+        handleNext();
+    }
+
+    setTouchPosition(null);
+  };
+
   return (
-    <div className="carousel">
-      <button id="prev" onClick={handlePrev}>Prev</button>
+    <div
+      className="carousel"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
+      <button id="prev" onClick={handlePrev}>
+        Prev
+      </button>
+
       {arrdishes.slice(index, index + (mobileSize ? 1 : 3)).map((card, i) => (
         <Card key={i} dish={card} />
       ))}
-      <button id="next" onClick={handleNext}>Next</button>
+      <button id="next" onClick={handleNext}>
+        Next
+      </button>
     </div>
   );
 };
