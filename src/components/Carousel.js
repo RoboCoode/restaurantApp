@@ -54,7 +54,8 @@ let arrdishes = [
 
 const Carousel = () => {
   const [index, setIndex] = useState(1);
-  const [mobileSize, setMobileSize] = useState(false);
+
+  const [mobileSize, setMobileSize] = useState(window.innerWidth<560);
 
   const handleNext = () => {
     setIndex(index + 3 >= arrdishes.length ? 0 : index + 1);
@@ -77,6 +78,8 @@ const Carousel = () => {
     }
 
     window.addEventListener("resize", handleResize);
+    return _ => {
+        window.removeEventListener('resize', handleResize)}
   });
 
   return (
