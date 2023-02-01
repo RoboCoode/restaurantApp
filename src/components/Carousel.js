@@ -75,8 +75,6 @@ const Carousel = () => {
         setMobileSize(false);
       }
 
-      console.log(window.innerWidth);
-      console.log(mobileSize);
     }
 
     window.addEventListener("resize", handleResize);

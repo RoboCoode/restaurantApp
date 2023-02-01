@@ -257,6 +257,8 @@
   grid-row: 2/2;
   grid-column: 1/12;
   margin-bottom: 3rem;
+ 
+
 }
 
 .main h1 {
@@ -274,6 +276,7 @@
   width: 12.5rem;
   background-color: #f3f8f5;
   border-radius: 0.5rem;
+
 }
 
 .cardimage {
@@ -704,7 +707,7 @@
     grid-row: 3/4;
   }
   .hero > p {
-    margin-top: 0.2rem;
+    
     line-height: 1.1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -713,9 +716,10 @@
     grid-row: 6/6;
     background-color: #495e57;
     opacity: 0.7;
-    padding: 0.5rem;
+   
     font-size: 1em;
-
+    text-align:center;
+        padding: 1rem 1rem ;
     color: #ffffff;
     border-radius: 0.5rem;
   }
@@ -733,7 +737,7 @@
     height: 3.1rem;
     font-size: 0.8rem;
     position: relative;
-    top: 8.3rem;
+    top: 11rem;
     margin-left: 0.5rem;
     border-radius: 2rem;
     box-shadow: 0.4rem 0.3rem 0.7rem #000000;
@@ -887,7 +891,9 @@
   .about > p {
     margin-bottom: 0;
     margin-top: 1rem;
-    line-height: 1.5rem;
+        line-height: 1.5rem;
+        text-align:center;
+        padding: 0rem 1rem ;
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
