@@ -29,28 +29,32 @@ const Carousel = (props) => {
     setTouchPosition(null);
   };
 
- 
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-      { props.currentIndex > 0 &&      <button className="left-arrow" onClick={ props.prev}>
-        &lt;
-    </button> }
- 
+        {props.currentIndex > 0 && (
+          <button className="left-arrow" onClick={props.prev}>
+            &lt;
+          </button>
+        )}
+
         <div className="carousel-content-wrapper">
           <div
-            className="carousel-content"    style={{ transform: props.mobSize ? `translateX(-${props.currentIndex * 55}%)` : `translateX(-${props.currentIndex * 30}%)`  }}
+            className="carousel-content"
+            style={{
+              transform: props.mobSize
+                ? `translateX(-${props.currentIndex * 55}%)`
+                : `translateX(-${props.currentIndex * 30}%)`,
+            }}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
           >
             {props.children}
-
           </div>
-
         </div>
-        <button className="right-arrow"  onClick={ props.next}>
-        &gt;
-    </button>
+        <button className="right-arrow" onClick={props.next}>
+          &gt;
+        </button>
       </div>
     </div>
   );
