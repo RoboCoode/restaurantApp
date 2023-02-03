@@ -15,6 +15,7 @@ function Reservation() {
       case "newdate": {
         return fetchData(action.date);
       }
+      default: { return }
     }
   }
 

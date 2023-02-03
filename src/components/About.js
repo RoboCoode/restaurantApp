@@ -6,10 +6,10 @@ function About (){
 return (
 
     <div className="about">
-       <img   id="imgabout1" src="./Mario and Adrian A.jpg" alt="photo of restaurant" />
+       <img   id="imgabout1" src="./Mario and Adrian A.jpg" alt="" />
 
-    <img id="imgabout2" src="./restaurant chef B.jpg" alt="photo of restaurant" />
-    <img id="imgabout3" src="./Mario and Adrian b.jpg" alt="photo of restaurant" />
+    <img id="imgabout2" src="./restaurant chef B.jpg" alt="" />
+    <img id="imgabout3" src="./Mario and Adrian b.jpg" alt="" />
     <h1> About Us </h1>
     <h4> Our story</h4>
     <p> Little Lemon is a charming neighborhood bistro that serves simple 

@@ -3,7 +3,7 @@ function Testimonial(props) {
   let listComments =  comments.map((comment) => (
     <div key={comment.name + Math.random()} className="testi">
       <div className="testiimage">
-        <img src={comment.image} alt="image" />
+        <img src={comment.image}  />
       </div>
 
       <div className="testibody">

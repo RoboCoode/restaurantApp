@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Card from "./Card";
 
 const Carousel = (props) => {
   const [touchPosition, setTouchPosition] = useState(null);

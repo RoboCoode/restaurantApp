@@ -1,6 +1,6 @@
 import AvailableTimes from "./AvailableTimes";
 import "./BookingForm.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
 function BookingForm(props) {
   function handleNewDateChange(e) {
     props.setDate(e.target.value);
