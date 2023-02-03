@@ -3,7 +3,7 @@ import "./BookingForm.css";
 
 function BookingForm(props) {
   function handleNewDateChange(e) {
-    props.setDate(e.target.value);
+    props.setFormData({ ...props.formData, date: e.target.value });
 
     props.updateFetchTime({ type: "newdate", date: e.target.value });
   }
@@ -15,76 +15,107 @@ function BookingForm(props) {
           <label htmlFor="res-date">Choose date</label>
           <input
             name="date"
-            value={props.date}
+            value={props.formData.date}
             onChange={handleNewDateChange}
+            onBlur={props.handleBlur}
+            className={props.formErrors.date ? "input-error" : ""}
             type="date"
             id="res-date"
             required
           />
+          <p className="input-error-message">{props.formErrors.date}</p>
         </div>
 
         <div className="labelbox">
           <label htmlFor="res-firstname">First name</label>
           <input
             name="firstName"
-            value={props.firstName}
-            onChange={(e) => props.setFirstName(e.target.value)}
+            value={props.formData.firstName}
+            onChange={(e) =>
+              props.setFormData({
+                ...props.formData,
+                firstName: e.target.value,
+              })
+            }
+            onBlur={props.handleBlur}
             type="text"
             id="res-firstname"
             placeholder="First Name"
             required
             minLength={2}
-            maxLength={50}
+            maxLength={20}
+            className={props.formErrors.firstName ? "input-error" : ""}
           />
+          <p className="input-error-message">{props.formErrors.firstName}</p>
         </div>
         <div className="labelbox">
           <label htmlFor="res-lastName">Last name</label>
           <input
-            name="last name"
-            value={props.lastName}
-            onChange={(e) => props.setLastName(e.target.value)}
+            name="lastName"
+            value={props.formData.lastName}
+            onChange={(e) =>
+              props.setFormData({ ...props.formData, lastName: e.target.value })
+            }
+            onBlur={props.handleBlur}
+            className={props.formErrors.lastName ? "input-error" : ""}
             type="text"
             id="res-lastName"
             placeholder="Last Name"
             minLength={2}
-            maxLength={50}
+            maxLength={20}
+            required
           />
+          <p className="input-error-message">{props.formErrors.lastName}</p>
         </div>
 
         <div className="labelbox">
           <label htmlFor="res-time">Choose time</label>
           <select
             name="time"
-            value={props.time}
-            onChange={(e) => props.setTime(e.target.value)}
+            value={props.formData.time}
+            onChange={(e) =>
+              props.setFormData({ ...props.formData, time: e.target.value })
+            }
+            onBlur={props.handleBlur}
+            className={props.formErrors.time ? "input-error" : ""}
             id="res-time "
             required
           >
             <option value={""}></option>
             <AvailableTimes avaTimes={props.avaTimes} />
           </select>
+          <p className="input-error-message">{props.formErrors.time}</p>
         </div>
         <div className="labelbox">
           <label htmlFor="guests">Number of guests</label>
           <input
             name="guest"
-            value={props.guest}
-            onChange={(e) => props.setGuest(e.target.value)}
+            value={props.formData.guest}
+            onChange={(e) =>
+              props.setFormData({ ...props.formData, guest: e.target.value })
+            }
+            onBlur={props.handleBlur}
+            className={props.formErrors.guest ? "input-error" : ""}
             type="number"
-            placeholder="1"
+            placeholder=""
             min="1"
             max="10"
             id="guests"
             required
           />
+          <p className="input-error-message">{props.formErrors.guest}</p>
         </div>
 
         <div className="labelbox">
           <label htmlFor="occasion">Occasion</label>
           <select
             name="occasion"
-            value={props.occasion}
-            onChange={(e) => props.setOccasion(e.target.value)}
+            value={props.formData.occasion}
+            onChange={(e) =>
+              props.setFormData({ ...props.formData, occasion: e.target.value })
+            }
+            className={props.formErrors.occasion ? "input-error" : ""}
+            onBlur={props.handleBlur}
             id="occasion"
             required
           >
@@ -92,6 +123,7 @@ function BookingForm(props) {
             <option value={"Birthday"}>Birthday</option>
             <option value={"Anniversary"}>Anniversary</option>
           </select>
+          <p className="input-error-message">{props.formErrors.occasion}</p>
         </div>
         <button
           aria-label="On Click"

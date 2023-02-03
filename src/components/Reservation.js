@@ -3,8 +3,6 @@ import BookingSlot from "./BookingSlot";
 import { useState, useReducer, useEffect } from "react";
 import { fetchAPI } from "../fetchAPI.js";
 
-
-
 function Reservation() {
   function initializeTimes() {
     return fetchData();
@@ -15,7 +13,9 @@ function Reservation() {
       case "newdate": {
         return fetchData(action.date);
       }
-      default: { return }
+      default: {
+        return;
+      }
     }
   }
 
@@ -30,35 +30,45 @@ function Reservation() {
     {},
     initializeTimes
   );
-  const [date, setDate] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [time, setTime] = useState("");
-  const [guest, setGuest] = useState("1");
-  const [occasion, setOccasion] = useState("");
+
   const [bookedSlots, setbookedSlots] = useState([]);
+  const [formErrors, setFormErrors] = useState({});
+  const [formData, setFormData] = useState({
+    date: "",
+    firstName: "",
+    lastName: "",
+    time: "",
+    guest: "1",
+    occasion: "",
+  });
 
   const getIsFormValid = () => {
-   
-
-    return date && firstName && lastName && time && guest && occasion;
+    return (
+      formData.date &&
+      formData.firstName &&
+      formData.lastName &&
+      formData.time &&
+      formData.guest &&
+      formData.occasion
+    );
   };
 
-
   const clearForm = () => {
-    setFirstName("");
-    setLastName("");
-    setDate("");
-    setTime("");
-    setGuest("1");
-    setOccasion("");
+    setFormData({
+      date: "",
+      firstName: "",
+      lastName: "",
+      time: "",
+      guest: "",
+      occasion: "",
+    });
   };
 
   const bookingconditions = () => {
     for (let i = 0; i < bookedSlots.length; i++) {
       if (
-        bookedSlots[i].bookedDate === date &&
-        bookedSlots[i].bookedTime === time
+        bookedSlots[i].bookedDate === formData.date &&
+        bookedSlots[i].bookedTime === formData.time
       ) {
         alert(
           "This reservation are already booked. Please choose another time. "
@@ -75,6 +85,31 @@ function Reservation() {
     return true;
   };
 
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+
+    let error = { ...formErrors };
+    if (!value) {
+      error[name] = "This field is required";
+    } else if (name == "firstName") {
+      if (value.length <= 2 || value.length >= 25) {
+        error[name] = " Name should be more than 2 and less than 50 char";
+      } else {
+        delete error[name];
+      }
+    }else if (name == "guest") {
+       if (value == 0) { error[name] = "guests should be min 1"} 
+       else { delete error[name]; }
+  }
+    
+    
+    else { delete error[name];}
+
+    setFormErrors(error);
+  };
+
+  console.log(formErrors);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (bookingconditions()) {
@@ -82,13 +117,14 @@ function Reservation() {
 
       setbookedSlots((prevState) => [
         ...prevState,
-        { ["bookedDate"]: date, ["bookedTime"]: time },
+        { ["bookedDate"]: formData.date, ["bookedTime"]: formData.time },
       ]);
 
       clearForm();
     } else {
       return;
     }
+    console.log("formData: ", formData);
   };
 
   return (
@@ -97,20 +133,11 @@ function Reservation() {
         handleSubmit={handleSubmit}
         getIsFormValid={getIsFormValid}
         avaTimes={availableTimes}
-        date={date}
-        setDate={setDate}
-        firstName={firstName}
-        setFirstName={setFirstName}
-        lastName={lastName}
-        setLastName={setLastName}
-        time={time}
-        setTime={setTime}
-        guest={guest}
-        setGuest={setGuest}
-        occasion={occasion}
-        setOccasion={setOccasion}
+        formData={formData}
+        setFormData={setFormData}
         updateFetchTime={dispatch}
-        
+        handleBlur={handleBlur}
+        formErrors={formErrors}
       />
       <BookingSlot bookedSlots={bookedSlots} />
     </div>

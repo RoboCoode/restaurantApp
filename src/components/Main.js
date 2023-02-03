@@ -63,6 +63,8 @@ function Main() {
   const [index, setIndex] = useState(0);
   const [mobileSize, setMobileSize] = useState(window.innerWidth < 560);
 
+
+
   const handleNext = () => {
     if (index + 1 >= arrdishes.length) {
       setIndex(0);
@@ -78,6 +80,10 @@ function Main() {
       setIndex((prevState) => prevState - 1);
     }
   };
+
+
+
+
 
   useEffect(() => {
     function handleResize() {
