@@ -43,14 +43,20 @@ function Reservation() {
   });
 
   const getIsFormValid = () => {
-    return (
-      formData.date &&
+
+    if (
+      Object.keys(formErrors).length === 0 &&
       formData.firstName &&
       formData.lastName &&
+      formData.occasion &&
       formData.time &&
-      formData.guest &&
-      formData.occasion
-    );
+      formData.date &&
+      formData.guest
+    ) {
+      return true ;
+    } else {
+      return  false;
+    }
   };
 
   const clearForm = () => {
@@ -119,12 +125,13 @@ function Reservation() {
         ...prevState,
         { ["bookedDate"]: formData.date, ["bookedTime"]: formData.time },
       ]);
-
+    
       clearForm();
+      
     } else {
       return;
     }
-    console.log("formData: ", formData);
+   
   };
 
   return (
